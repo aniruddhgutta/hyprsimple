@@ -1,3 +1,12 @@
+  _                                              _      
+ | |                         o                  | |     
+ | |            _   ,_    ,      _  _  _     _  | |  _  
+ |/ \   |   | |/ \_/  |  / \_|  / |/ |/ |  |/ \_|/  |/  
+ |   |_/ \_/|/|__/    |_/ \/ |_/  |  |  |_/|__/ |__/|__/
+           /|/|                           /|            
+           \|\|                           \|           
+
+           
 ## Screenshots
 ![Screenshots](https://raw.githubusercontent.com/aniruddhgutta/hyprsimple/master/main/Pictures/Screenshots/catppuccin-setup_1.png)
 
@@ -105,7 +114,7 @@ The *configs.sh* script -
 * sets up NVIDIA drivers
 * sets up the zsh shell
 
-NOTE: There are three different folders in the repo -
+***NOTE***:: There are three different folders in the repo -
 * **Main**: contains the absolute essentials for a simple hyprland config
 * **Extras**: contains (very few) extra configs for stuff like mpv, qimgv, etc)
 * **Archived**: contains previously used configs and/or broken ones for reference/backups

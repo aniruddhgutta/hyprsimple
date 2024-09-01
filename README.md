@@ -9,10 +9,10 @@
 
 
 ## Overview
-This rice aims to provide a **simple** and **comfy** hyprland setup (**especially for new users)** made for and by a new arch user (had to throw it in there). It includes all the essential packages along with a few which I use (can be excluded) which provide for a clean DE.  The key feature here is the fact that most of the configs are **very close to default/are well documented** (there are of course a few exceptions like swaync) so you can easy comprehend what's happening in any config/script.
+This rice aims to provide a **simple** and **comfy** hyprland setup (**especially for new users)** made for and by a new arch user (had to throw it in there). It includes all the essential packages along with a few which I use (can be excluded) which provide for a clean DE.  The key feature here is the fact that most of the configs are **very close to default/are well documented** (there are of course a few exceptions like swaync) so you can easily comprehend what's happening in any config/script.
 I highly recommend for you to **check out all the configs** and just go through them once, because even if you do not understand what's happening, it'll give you a better idea if at all something breaks and you want to fix it.
 
-***NOTE***: A huge amount of **wallpapers** (*~400 in total*: 200 regular with 200 extra catppuccin versions) are included and can be cycled through using the hotkey - SUPER + W. Other keybindings are listed below.
+***NOTE:*** A huge amount of **wallpapers** (*~400 in total:* 200 regular with 200 extra catppuccin) are included and can be cycled through using the hotkey - SUPER + W. Other keybindings are listed below.
 
 ## Keybinds
 Below I've included some common keybinds. I  recommend you to go through the hyprland.conf to checkout the rest of the keybinds and also recommend you checkout the waybar config file to checkout what clicking each of the modules does.
@@ -78,7 +78,7 @@ Utilities -
 
 ## Installation
 > [!IMPORTANT]
-The install script is still a work in progress and is catered to my device, so I highly recommend you look into the configs and packages and remove whatever is unnecessary (like nvidia drivers or auto-cpufreq if you're on a desktop).
+The install script is still a work in progress and is catered to my device, so I highly recommend you to look into the configs and packages and remove whatever is unnecessary (like nvidia drivers or auto-cpufreq if you're on a desktop).
 
 As of right now, the hyprsimple.sh script hasn't been tested yet, so to use the "install script", simply do the following:
 

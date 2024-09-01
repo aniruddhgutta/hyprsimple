@@ -1,0 +1,169 @@
+@import "mocha.css";
+
+@keyframes blink {
+  to {
+    color: #000000;
+  }
+}
+
+/* Fonts */
+* {
+  font-family: "monospace";
+  font-size: 13px;
+}
+
+/* Bar */
+window#waybar {
+  background-color: transparent;
+  border-radius: 13px;
+  transition-property: background-color;
+  transition-duration: 0.5s;
+}
+
+/* Examples
+button {
+  Use box-shadow instead of border so the text isn't offset
+  box-shadow: inset 0 -3px transparent;
+  Avoid rounded borders under each button name
+  border: none;
+  border-radius: 0;
+}
+
+https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect
+button:hover {
+  background: inherit;
+  box-shadow: inset 0 -3px #ffffff;
+} */
+
+#window {
+  padding: 0 7px;
+  color: @text;
+}
+
+#pulseaudio {
+  padding: 0 7px;
+  color: @text;
+}
+#pulseaudio.muted {
+  padding: 0 7px;
+  color: @red;
+}
+#pulseaudio:hover {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+#network {
+  padding: 0 7px;
+  color: @text;
+}
+#network:hover {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+#custom-nowplaying {
+  padding: 0 7px;
+  color: @text;
+}
+
+#custom-nowplaying:hover {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+#custom-notifications {
+  padding: 0 7px;
+  color: @text;
+}
+
+#custom-notifications:hover {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+#bluetooth {
+  padding: 0 7px;
+  color: @text;
+}
+#bluetooth:hover {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+#clock {
+  padding: 0 7px;
+  color: @sky;
+}
+#clock:hover {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+#battery {
+  padding: 0 7px;
+  color: @green;
+}
+#battery.charging {
+  padding: 0 7px;
+  color: @teal;
+}
+#battery.plugged {
+  padding: 0 7px;
+  color: @sapphire;
+}
+#battery:hover {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+/* Using steps() instead of linear as a timing function to limit cpu usage */
+#battery.critical:not(.charging) {
+  background-color: #f53c3c;
+  color: #ffffff;
+  animation-name: blink;
+  animation-duration: 0.5s;
+  animation-timing-function: steps(12);
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+label:focus {
+  background-color: #000000;
+}
+
+#workspaces button {
+  padding: 0 5px;
+  background-color: transparent;
+  color: @sky;
+}
+#workspaces button:hover {
+  background: rgba(0, 0, 0, 0.2);
+}
+#workspaces button.focused {
+  background-color: @lavender;
+  box-shadow: inset 0 -3px #ffffff;
+}
+#workspaces button.urgent {
+  background-color: #eb4d4b;
+}
+
+#mode {
+  background-color: #64727d;
+  box-shadow: inset 0 -3px #ffffff;
+}
+
+/* Modules rules */
+.modules-right,
+.modules-left,
+.modules-center {
+  border-radius: 15px;
+}
+.modules-right {
+  padding: 0 7px;
+  background-color: rgba(30, 30, 46, 1);
+  border: 2px solid rgba(180, 190, 254, 0.5);
+}
+
+.modules-left {
+  padding: 0 7px;
+  background-color: rgba(30, 30, 46, 1);
+  border: 2px solid rgba(180, 190, 254, 0.5);
+}
+
+.modules-center {
+  background: rgba(30, 30, 46, 1);
+  padding: 0 7px;
+  border: 2px solid rgba(180, 190, 254, 0.5);
+}

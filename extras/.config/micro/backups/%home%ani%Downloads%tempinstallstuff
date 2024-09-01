@@ -1,0 +1,191 @@
+# This is meant to be a quick script (still in working) for installing my dotfiles
+
+# Timezone setup
+timedatectl set-timezone Asia/Kolkata
+
+
+
+#██████╗  █████╗  ██████╗██╗  ██╗ █████╗  ██████╗ ███████╗███████╗
+#██╔══██╗██╔══██╗██╔════╝██║ ██╔╝██╔══██╗██╔════╝ ██╔════╝██╔════╝
+#██████╔╝███████║██║     █████╔╝ ███████║██║  ███╗█████╗  ███████╗
+#██╔═══╝ ██╔══██║██║     ██╔═██╗ ██╔══██║██║   ██║██╔══╝  ╚════██║
+#██║     ██║  ██║╚██████╗██║  ██╗██║  ██║╚██████╔╝███████╗███████║
+#╚═╝     ╚═╝  ╚═╝ ╚═════╝╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝ ╚══════╝╚══════╝                                                                
+# Installing packages
+sudo pacman -S archlinux-keyring #keyrings 
+sudo pacman -S brightnessctl unzip blueman bluez git
+sudo pacman -S hyprland rofi-wayland hyprpaper waybar
+
+
+# Fonts
+sudo pacman -S noto-fonts-emoji ttf-jetbrains-mono-nerd ttf-iosevka-nerd nerd-fonts noto-fonts ttf-fira-code ttf-firacode-nerd ttf-font-awesome
+yay -S ttf-poppins
+sudo pacman -S papirus-icon-theme
+
+
+# Thunar and Disks
+sudo pacman -S file-roller gvfs thunar-volman thunar-archive-plugin thunar-media-tags-plugin
+yay -S tumbler
+sudo pacman -S gnome-disk-utility ntfs-3g
+
+
+# Nvidia
+sudo pacman -S nvidia nvidia-utils nvidia-settings
+micro /etc/mkinitcpio.conf 
+	MODULES=(nvidia nvidia_modeset nvidia_uvm nvidia_drm)
+micro /etc/modprobe.d/nvidia.conf
+	options nvidia_drm modeset=1 fbdev=1
+sudo mkinitcpio -P #rebuilding initramfs
+systemctl enable nvidia-suspend.service
+systemctl enable nvidia-resume.service
+systemctl enable nvidia-hibernate.service
+
+
+# Audio
+sudo pacman -S pipewire-audio pipewire-pulse pipewire-alsa pavucontrol
+
+
+# Notifications
+sudo pacman -S dunst pamixer libcanberra
+
+
+# Cool programs
+sudo pacman -s bat zoxide rsync
+sudo pacman -S zathura zathura-cb zathura-pdf-mupdf #zathura
+
+
+# Theming
+sudo pacman -S kvantum qt5ct qt6ct nwg-look kvantum-qt5 papirus-icon-theme qt5-quickcontrols2 neofetch
+yay -S sddm-conf-git
+
+
+# Programs
+sudo pacman -S mpv micro zathura zathura-pdf-mupdf
+
+
+# Clipboard and screenshots
+yay -S wl-clipboard
+sudo pacman -S grim slurp
+
+
+
+#███╗   ███╗██╗ ██████╗██████╗  ██████╗ 
+#████╗ ████║██║██╔════╝██╔══██╗██╔═══██╗
+#██╔████╔██║██║██║     ██████╔╝██║   ██║
+#██║╚██╔╝██║██║██║     ██╔══██╗██║   ██║
+#██║ ╚═╝ ██║██║╚██████╗██║  ██║╚██████╔╝
+#╚═╝     ╚═╝╚═╝ ╚═════╝╚═╝  ╚═╝ ╚═════╝                                        
+# Micro plugins
+ micro -plugin install runit
+ micro -plugin install palettero
+ micro -plugin install cheat
+ micro -plugin install lsp
+ micro -plugin install manipulator
+
+
+
+#██╗   ██╗ █████╗ ██╗   ██╗
+#╚██╗ ██╔╝██╔══██╗╚██╗ ██╔╝
+# ╚████╔╝ ███████║ ╚████╔╝ 
+#  ╚██╔╝  ██╔══██║  ╚██╔╝  
+#   ██║   ██║  ██║   ██║   
+#   ╚═╝   ╚═╝  ╚═╝   ╚═╝                             
+# Yay installation
+pacman -S --needed git base-devel && git clone https://aur.archlinux.org/yay-bin.git && cd yay-bin && makepkg -si
+
+
+# Yay packages
+yay -S thorium-browser-bin
+yay -S wlogout
+yay -S qimgv #pacman -S qt5-wayland
+yay -S r-quick-share
+yay -S sddm-conf-git
+
+
+# Polkit
+yay -S xfce-polkit
+
+
+
+#███████╗██████╗ ██████╗ ███╗   ███╗
+#██╔════╝██╔══██╗██╔══██╗████╗ ████║
+#███████╗██║  ██║██║  ██║██╔████╔██║
+#╚════██║██║  ██║██║  ██║██║╚██╔╝██║
+#███████║██████╔╝██████╔╝██║ ╚═╝ ██║
+#╚══════╝╚═════╝ ╚═════╝ ╚═╝     ╚═╝                                   
+# SDDM Theme setup
+#Dependencies
+pacman -Syu qt6-svg qt6-declarative
+
+
+#Installing
+sudo cp -r /dotfiles/catppuccin-sddm-mocha /usr/share/sddm/themes
+echo /etc/sddm.conf
+[Theme]
+Current=catppuccin-mocha
+
+
+# Spotify
+yay -S spotify zenity ffmpeg4.4 spicetify-cli
+curl -fsSL https://raw.githubusercontent.com/spicetify/marketplace/main/resources/install.sh | sh #marketplace
+
+
+# Spicetify stuff
+sudo chmod a+wr /opt/spotify
+sudo chmod a+wr /opt/spotify/Apps -R
+
+
+# Copying configs
+cd dotfiles-v2
+
+
+# Hyprland
+cp -r .config/hypr ~/.config/
+
+
+# Waybar
+cp -r .config/waybar ~/.config/
+
+
+# mpv
+cp -r .config/mpv ~/.config/
+
+
+# kitty
+cp -r .config/kitty ~/.config/
+
+
+# bash scripts
+cp -r .local/bin ~/.local/
+
+
+# Prism Launcher
+cp -r .local/share/PrismLauncher  ~/.local/share/
+
+
+# KDE Colors
+cp -r .local/share/color-schemes ~/.local/share/
+cp -r .local/share/plasma ~/.local/share/
+
+
+# bash and zsh
+cp -r .gtkrc-2.0 ~/
+cp -r .zsh_history 0 ~/
+cp -r .bash_history ~/
+
+
+# gtk
+cp -r .local/share/nwg-look ~/.local/share/
+
+
+# sddm theme
+pacman -Syu qt6-svg qt6-declarative qt5-quickcontrols2 #dependencies
+cp -r catpuccin-sddm-mocha /usr/share/sddm/themes/
+touch /etc/sddm.conf
+echo /etc/sddm.conf 
+	[Theme]
+	Current=catppuccin-sddm-mocha
+
+# themes, cursors and icons
+cp -r .themes ~/.themes
+cp -r .local/share/icons ~/.local/share

@@ -1,0 +1,14 @@
+{
+    "Alt-/": "lua:comment.comment",
+    "Alt-d": "command:definition",
+    "Alt-f": "command:format",
+    "Alt-k": "command:hover",
+    "Alt-r": "command:references",
+    "CtrlP": "command:palettero",
+    "CtrlSpace": "command:lspcompletion",
+    "CtrlUnderscore": "lua:comment.comment",
+    "F1": "command:cheat",
+    "F12": "command:makeup",
+    "F5": "command:runit",
+    "F9": "command:makeupbg"
+}

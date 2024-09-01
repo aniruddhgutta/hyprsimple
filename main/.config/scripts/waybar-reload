@@ -1,0 +1,5 @@
+#!/bin/sh
+# Forcefully update/restart waybar
+
+killall waybar
+waybar &

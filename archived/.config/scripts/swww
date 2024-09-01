@@ -1,0 +1,8 @@
+1#!/bin/bash
+
+#start swww
+swww-daemon
+directory=/mnt/Files/Pictures/Wallpapers/
+wallpaper=$(find "$directory" -type f | shuf -n 1)
+    swww img "$wallpaper" --resize crop --transition-type wipe --transition-angle 30 --transition-fps 60 --transition-duration 1.5  #setting wallpaper
+    wal -i $wallpaper -n  #pywal colors

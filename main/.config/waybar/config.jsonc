@@ -1,0 +1,129 @@
+{
+  "position": "top",
+  "margin-bottom": 0,
+  "margin-top": 5,
+  "margin-left": 10,
+  "margin-right": 10,
+  "spacing": 7,
+  "height": 28,
+
+  "modules-left": ["hyprland/workspaces", "custom/nowplaying"],
+  "modules-center": ["hyprland/window"],
+  "modules-right": ["battery", "network", "bluetooth", "pulseaudio", "clock", "custom/notifications"],
+
+  "custom/notifications": {
+    "tooltip": true,
+    "format": "{icon}",
+    "format-icons": {
+      "notification": "<span foreground='red'><sup></sup></span>",
+      "none": "",
+      "dnd-notification": "<span foreground='red'><sup></sup></span>",
+      "dnd-none": "",
+      "inhibited-notification": "<span foreground='red'><sup></sup></span>",
+      "inhibited-none": "",
+      "dnd-inhibited-notification": "<span foreground='red'><sup></sup></span>",
+      "dnd-inhibited-none": ""
+    },
+    "return-type": "json",
+    "exec-if": "which swaync-client",
+    "exec": "swaync-client -swb",
+    "on-click": "sleep 0.1 && swaync-client -t -sw",
+    "on-click-right": "swaync-client -d -sw",
+    "escape": true
+  },
+
+  "custom/mediakeys": {
+    "format": "󰎇",
+    "on-click": "playerctl play-pause",
+    "on-double-click": "playerctl next",
+    "on-triple-click": "playerctl previous",
+  },
+
+  "custom/nowplaying": {
+    "format": "󰎇 {}",
+    "interval": 1,
+    "exec": "~/.config/scripts/nowplaying",
+    "on-click": "playerctl play-pause",
+    "on-double-click": "playerctl next",
+    "on-triple-click": "playerctl previous",
+    "max-length": 60,
+  },
+
+  "hyprland/window": {
+    "format": "{title}",
+    "max-length": 40,
+    "separate-outputs": true,
+    "rewrite": {
+      "": "Hyprland", },
+    "on-click": "~/.config/scripts/swww-pywal",
+  },
+
+  "hyprland/workspaces": {
+    "format": "{icon}",
+    "on-click": "activate",
+    "format-icons": {
+      "active": " ",
+    },
+    "sort-by-number": true,
+    "persistent-workspaces": {
+      "*": 5,
+    },
+  },
+
+  "clock": {
+    "format": "{:%H:%M}",
+    "tooltip-format": "{:%a, %B %d %H:%M}",
+    "on-click": "morgen",
+  },
+
+  "battery": {
+    "states": {
+      "warning": 30,
+      "critical": 15,
+    },
+    "format": "{icon}  {capacity}%",
+    "format-full": "{icon}  {capacity}%",
+    "format-charging": " {capacity}%",
+    "format-plugged": " {capacity}%",
+    "format-alt": "{time} {icon}",
+    "format-icons": ["", "", "", "", ""],
+    "on-click": "auto-cpufreq-gtk",
+  },
+
+  "network": {
+    "tooltip": true,
+    "format-wifi": "  {essid}",
+    "format-ethernet": "{cidr} ",
+    "format-disconnected": "Disconnected ⚠",
+    "on-click": "iwgtk",
+  },
+
+  "bluetooth": {
+    // "controller": "controller1", // specify the alias of the controller if there are more than 1 on the system
+    "format": " {status}",
+    // "format-disabled": " Disabled", // an empty format will hide the module
+    "format-connected": " {num_connections} connected",
+    "tooltip": true,
+    "format-connected-battery": " {device_alias} ({device_battery_percentage}%)",
+    "tooltip-format": "{controller_alias}\t{controller_address}",
+    "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{device_enumerate}",
+    "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+    "on-click": "blueman-manager",
+  },
+
+  "pulseaudio": {
+    "format": "{icon}  {volume}%",
+    "tooltip": true,
+    "format-muted": "󰖁   {format_source}",
+    "format-icons": {
+      "headphone": "",
+      "hands-free": "",
+      "headset": "",
+      "phone": "",
+      "portable": "",
+      "car": "",
+      "default": ["", "", ""],
+    },
+    "on-click": "pavucontrol",
+  },
+}

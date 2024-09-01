@@ -1,0 +1,8 @@
+#!/bin/sh
+# Wallpaper setting and auto-color generation
+
+swww-daemon
+directory=~/Pictures/Wallpapers/regular
+wallpaper=$(find "$directory" -type f | shuf -n 1)
+    swww img "$wallpaper" --resize crop --transition-type wipe --transition-angle 30 --transition-fps 60 --transition-duration 1.5  #setting wallpaper
+#    wal -i $wallpaper -n  #pywal colors

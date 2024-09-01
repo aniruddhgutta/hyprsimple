@@ -1,0 +1,6 @@
+#!/bin/sh
+# Unblocks wifi card and other devices
+
+rfkill unblock all
+iwctl adapter phy0 set-property Powered on
+iwctl device wlan0 set-property Powered on

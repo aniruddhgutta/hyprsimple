@@ -1,0 +1,4 @@
+#!/bin/bash
+
+iwctl adapter phy0 set-property Powered on
+iwctl device wlan0 set-property Powered on

@@ -83,9 +83,11 @@ The install script is still a work in progress and is catered to my device, so I
 As of right now, the hyprsimple.sh script hasn't been tested yet, so to use the "install script", simply do the following:
 
 ```shell
+cd ~/
+git clone https://github.com/aniruddhgutta/hyprsimple.git ~/dots
 cd ~/dots  
-sudo chmod +x packages.sh  #making the packages install script executable
-sudo chmod +x configs.sh  #making the configs install script executable
+sudo chmod +x ~/dots/packages.sh  #making the packages install script executable
+sudo chmod +x ~/dots/configs.sh  #making the configs install script executable
 ./packages.sh  #installs all the packages
 ./configs.sh  #copies the configs, only run after the package script is completed
 ```
@@ -113,6 +115,8 @@ The *configs.sh* script -
 *As convenient as it sounds, I'm not the best at making scripts because I'm new to all of this, so I recommend manually installing the packages and copying the configs by referencing the scripts mentioned above:*
 ```shell
 #Run the following commands after installing the required packages...
+cd ~
+git clone https://github.com/aniruddhgutta/hyprsimple.git dots
 cp -r ~/dots/main/.config/ ~/
 cp -r ~/dots/main/.local/ ~/
 cp -r ~/dots/main/.themes/ ~/

@@ -1,12 +1,3 @@
-  _                                              _      
- | |                         o                  | |     
- | |            _   ,_    ,      _  _  _     _  | |  _  
- |/ \   |   | |/ \_/  |  / \_|  / |/ |/ |  |/ \_|/  |/  
- |   |_/ \_/|/|__/    |_/ \/ |_/  |  |  |_/|__/ |__/|__/
-           /|/|                           /|            
-           \|\|                           \|           
-
-           
 ## Screenshots
 ![Screenshots](https://raw.githubusercontent.com/aniruddhgutta/hyprsimple/master/main/Pictures/Screenshots/catppuccin-setup_1.png)
 

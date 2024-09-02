@@ -107,7 +107,7 @@ The *configs.sh* script -
 * sets up NVIDIA drivers
 * sets up the zsh shell
 
-***NOTE***:: There are three different folders in the repo -
+***NOTE***: There are three different folders in the repo -
 * **Main**: contains the absolute essentials for a simple hyprland config
 * **Extras**: contains (very few) extra configs for stuff like mpv, qimgv, etc)
 * **Archived**: contains previously used configs and/or broken ones for reference/backups

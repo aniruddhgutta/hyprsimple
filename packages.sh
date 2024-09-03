@@ -41,7 +41,7 @@ echo "Installing audio packages (pipewire)..."
 sudo pacman -S --noconfirm  pipewire-audio pipewire-pulse pipewire-alsa pavucontrol dunst pamixer libcanberra  #audio and notifications
 echo "${green}Done${clear}!"
 echo "Installing common utilities..."
-sudo pacman -S --noconfirm  obs-studio syncthing converseen obsidian gnome-calculator evince zathura zathura-cb zathura-pdf-poppler bat zoxide fastfetch mpv micro  #programs
+sudo pacman -S --noconfirm  qbittorrent obs-studio syncthing converseen obsidian gnome-calculator evince zathura zathura-cb zathura-pdf-poppler bat zoxide fastfetch mpv micro  #programs
 echo "${green}Done${clear}!"
 
 # yay install
@@ -61,7 +61,7 @@ echo "Installing extra hyprland packages..."
 yay -S --noconfirm  iwgtk ttf-poppins clipse wlogout xfce-polkit tumbler grimblast-git  #required
 echo "${green}Done${clear}!"
 echo "Installing more common utilities..."
-yay -S --noconfirm  notion-app-electron morgen-bin qimgv spotify vesktop thorium-browser-bin spotify zenity ffmpeg4.4 spicetify-cli tauon-music-box cursor-appimage zen-brwoser-optimized-bin  #programs
+yay -S --noconfirm  notion-app-electron morgen-bin qimgv spotify vesktop thorium-browser-bin spotify zenity ffmpeg4.4 spicetify-cli tauon-music-box cursor-appimage zen-brwoser-avx2-bin  #programs
 #yay -S --noconfirm  r-quick-share vscodium microsoft-teams-nativefier  # Hard to install
 echo "${green}Done${clear}!"
 echo "Installing theme packages..."

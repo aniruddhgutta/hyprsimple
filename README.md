@@ -78,10 +78,18 @@ Utilities -
 
 ## Installation
 > [!IMPORTANT]
-The install script is still a work in progress and is catered to my device, so I highly recommend you to look into the configs and packages and remove whatever is unnecessary (like nvidia drivers or auto-cpufreq if you're on a desktop).
+The install script is completed, but it is catered to my device, so I highly recommend you to look into the configs and packages and remove whatever is unnecessary (like nvidia drivers or auto-cpufreq if you're on a desktop). Another side note is that this install script uses CHAOTIC AUR, so if you do not want to use it, simply uncomment few lines in the packages.sh script.
 
-As of right now, the hyprsimple.sh script hasn't been tested yet, so to use the "install script", simply do the following:
+To use the install script, simply run -
+```shell
+cd ~/
+git clone https://github.com/aniruddhgutta/hyprsimple.git ~/dots
+cd ~/dots  
+sudo chmod +x ~/dots/hyprsimple.sh  #making the install script executable
+./hyprsimple.sh  #installs and sets up everything
+```
 
+To install without chaotic aur, simply uncomment some lines in the packages.sh script and run the following -
 ```shell
 cd ~/
 git clone https://github.com/aniruddhgutta/hyprsimple.git ~/dots
@@ -91,6 +99,9 @@ sudo chmod +x ~/dots/configs.sh  #making the configs install script executable
 ./packages.sh  #installs all the packages
 ./configs.sh  #copies the configs, only run after the package script is completed
 ```
+The *hyprsimple.sh* script - 
+* sets up chaotic aur and syncs repos
+* runs both packages.sh and configs.sh scripts
 
 The *packages.sh* script - 
 * installs the required packages
@@ -112,7 +123,7 @@ The *configs.sh* script -
 * **Extras**: contains (very few) extra configs for stuff like mpv, qimgv, etc)
 * **Archived**: contains previously used configs and/or broken ones for reference/backups
 
-*As convenient as it sounds, I'm not the best at making scripts because I'm new to all of this, so I recommend manually installing the packages and copying the configs by referencing the scripts mentioned above:*
+*As convenient as it sounds, I'm not the best at making scripts because I'm new to all of this, so you could also manually install the packages and copy the configs by referencing the scripts mentioned above:*
 ```shell
 #Run the following commands after installing the required packages...
 cd ~
@@ -126,6 +137,4 @@ cp -r ~/dots/main/Pictures ~/
 
 ## TODO
 - [ ] Neovim
-- [ ] Install script
-- [ ] Chatoic AUR setup and migrating all aur packages
 - [ ] Pywal

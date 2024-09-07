@@ -69,7 +69,7 @@ Done!
 "
 
 # chaotic-aur install
-sudo pacman -S --noconfirm wlogout tumbler grimblast-git qimgv-git spotify vesktop ffmpeg4.4 spicetify-cli spicetify-marketplace-bin tauon-music-box catppuccin-mocha-grub-theme-git catppuccin-cursors-mocha qt6-svg qt6-declarative pfetch  #chaotic-aur
+sudo pacman -S --noconfirm wlogout grimblast-git qimgv-git spotify vesktop ffmpeg4.4 spicetify-cli spicetify-marketplace-bin tauon-music-box catppuccin-mocha-grub-theme-git catppuccin-sddm-theme-mocha qt6-svg qt6-declarative pfetch  #chaotic-aur
 
 # yay install
 echo "
@@ -97,7 +97,7 @@ sudo pacman -S --needed --noconfirm  git base-devel && git clone https://aur.arc
 
 # yay packages (excluding chaotic aur packages)
 echo "Installing extra packages..."
-yay -S --noconfirm iwgtk ttf-poppins clipse xfce-polkit notion-app-electron morgen-bin thorium-browser-bin cursor-appimage pywal-16-colors zen-browser-avx2-bin	
+yay -S --noconfirm iwgtk ttf-poppins clipse xfce-polkit notion-app-electron cursor-appimage pywal-16-colors zen-browser-avx2-bin	
 echo "
 
 Done!

@@ -37,8 +37,10 @@ echo "
 Done!
 
 "
-echo "Installing thunar and plugins..."
-sudo pacman -S --noconfirm  file-roller gvfs gvfs-mtp thunar-volman thunar-archive-plugin thunar-media-tags-plugin gnome-disk-utility ntfs-3g  #thunar and gnome-disk
+echo "Installing file manager and disk manager..."
+sudo pacman -S --noconfirm  file-roller gvfs gvfs-mtp gnome-disk-utility ntfs-3g xorg-xhost gparted  #archive manager and gnome disks
+#sudo pacman -S --noconfirm  thunar-volman thunar-archive-plugin thunar-media-tags-plugin  #thunar
+sudo pacman -S --noconfirm  nemo-fileroller nemo-preview nemo-share  #nemo
 echo "
 
 Done!

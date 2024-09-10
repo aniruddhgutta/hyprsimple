@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/bash
 
 echo "
   _                                              _      
@@ -15,8 +15,11 @@ sudo pacman-key --recv-key 3056513887B78AEB --keyserver keyserver.ubuntu.com
 sudo pacman-key --lsign-key 3056513887B78AEB
 sudo pacman -U --noconfirm 'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-keyring.pkg.tar.zst' 'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-mirrorlist.pkg.tar.zst'
 
-sudo rm -r /etc/pacman.conf
-sudo cp -r ~/dots/main/pacman.conf /etc/
+#sudo rm -r /etc/pacman.conf
+#sudo cp -r ~/dots/main/pacman.conf /etc/
+sudo sh -c "echo '
+[chaotic-aur]
+Include = /etc/pacman.d/chaotic-mirrorlist' >> /etc/pacman.conf"
 sudo pacman -Syyuu --noconfirm
 
 # next scripts

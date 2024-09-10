@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # Installing packages
 echo "
@@ -31,7 +31,7 @@ Done!
 
 "
 echo "Installing themeing related packages..."
-sudo pacman -S --noconfirm  papirus-icon-theme kvantum nwg-look kvantum-qt5 qt5-wayland qt5-quickcontrols2 qt6-svg qt6-declarative  #themeing
+sudo pacman -S --noconfirm  papirus-icon-theme kvantum nwg-look kvantum-qt5 qt5-wayland qt5-quickcontrols2 qt6-svg qt6-declarative qt5ct qt6ct  #themeing
 echo "
 
 Done!
@@ -54,14 +54,14 @@ Done!
 
 "
 echo "Installing audio packages (pipewire)..."
-sudo pacman -S --noconfirm  pipewire-audio pipewire-pulse pipewire-alsa pavucontrol dunst pamixer libcanberra  #audio and notifications
+sudo pacman -S --noconfirm  pipewire-audio pipewire-pulse pipewire-alsa pavucontrol libcanberra  #audio and notifications
 echo "
 
 Done!
 
 "
-echo "Installing common utilities..."
-sudo pacman -S --noconfirm  qbittorrent obs-studio syncthing converseen obsidian gnome-calculator evince zathura zathura-cb zathura-pdf-poppler bat zoxide fastfetch mpv micro  #programs
+#echo "Installing common utilities..."
+#sudo pacman -S --noconfirm  qbittorrent obs-studio syncthing converseen obsidian gnome-calculator evince zathura zathura-cb zathura-pdf-poppler bat zoxide fastfetch mpv micro  #programs
 echo "
 
 Done!
@@ -69,7 +69,7 @@ Done!
 "
 
 # chaotic-aur install
-sudo pacman -S --noconfirm wlogout grimblast-git qimgv-git spotify vesktop ffmpeg4.4 spicetify-cli spicetify-marketplace-bin tauon-music-box catppuccin-mocha-grub-theme-git catppuccin-sddm-theme-mocha qt6-svg qt6-declarative pfetch  #chaotic-aur
+sudo pacman -S --noconfirm wlogout grimblast-git qimgv-git mpv micro gnome-calculator evince ffmpeg4.4 bat catppuccin-mocha-grub-theme-git qt6-svg qt6-declarative pfetch  #chaotic-aur
 
 # yay install
 echo "
@@ -97,7 +97,7 @@ sudo pacman -S --needed --noconfirm  git base-devel && git clone https://aur.arc
 
 # yay packages (excluding chaotic aur packages)
 echo "Installing extra packages..."
-yay -S --noconfirm iwgtk ttf-poppins clipse xfce-polkit notion-app-electron cursor-appimage pywal-16-colors zen-browser-avx2-bin	
+yay -S --noconfirm  catppuccin-sddm-theme-mocha iwgtk ttf-poppins clipse xfce-polkit pywal-16-colors
 echo "
 
 Done!
@@ -130,7 +130,3 @@ echo "
 Done!
 
 "
-
-# cleaning up
-sudo rm -r ~/dots/yay-bin/
-sudo rm -r ~/dots/auto-cpufreq/

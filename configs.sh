@@ -27,7 +27,6 @@ cp -r ~/dots/main/.icons/ ~/  #cursors
 cp -r ~/dots/main/.local/ ~/
 
 cp -r ~/dots/main/Pictures ~/
-echo "#(cat ~/.cache/wal/sequences &)  #pywal colors" >> ~/.zshrc
 echo "
 
 Done!
@@ -71,10 +70,9 @@ echo "Installing spicetify...."
 curl -fsSL https://raw.githubusercontent.com/spicetify/marketplace/main/resources/install.sh | sh  #marketplace
 sudo chmod a+wr /opt/spotify
 sudo chmod a+wr /opt/spotify/Apps -R
-spicetify backup apply
 echo "
 
-Done!
+Done! Please ensure to run Spotify first, and then run 'spicetify backup apply' without quotes.
 
 "
 
@@ -110,11 +108,11 @@ Done!
 "
 
 # gsettings
-gsettings set org.gnome.desktop.interface gtk-theme catppuccin-mocha-mauve
+gsettings set org.gnome.desktop.interface gtk-theme 'catppuccin-mocha-mauve'
 gsettings set org.gnome.desktop.interface monospace-font-name 'Monospace 10'
 gsettings set org.gnome.desktop.interface document-font-name 'Sans 10'
 gsettings set org.gnome.desktop.interface font-name 'Sans 10'
-gsettings set org.gnome.desktop.interface cursor-theme '(cursor)_Catppuccin_Mocha_Mauve_Cursors'
+gsettings set org.gnome.desktop.interface cursor-theme 'Catppuccin-Mocha-Mauve'
 gsettings set org.gnome.desktop.interface cursor-size '24'
 gsettings set org.gnome.desktop.interface icon-theme 'Papirus'
 
@@ -133,10 +131,12 @@ WARNING - NVIDIA drivers are unstable and may likely result in some issues. Proc
 
 "
 echo "Setting up NVIDIA drivers..."
-sudo rm -r /etc/modprobe.d/nvidia.conf
-sudo cp -r ~/dots/main/nvidia.conf /etc/modprobe.d/
-sudo rm -r /etc/mkinitcpio.conf
-sudo cp -r ~/dots/main/mkinitcpio.conf /etc/
+sudo sh -c "echo 'options nvidia_drm modeset=1 fbdev=1' >> /etc/modprobe.d/nvidia.conf"
+sudo sh -c "echo 'MODULES=(nvidia nvidia_modeset nvidia_uvm nvidia_drm)' >> /etc/mkinitcpio.conf"
+#sudo rm -r /etc/mkinitcpio.conf
+#sudo cp -r ~/dots/main/mkinitcpio.conf /etc/
+#sudo rm -r /etc/modprobe.d/nvidia.conf
+#sudo cp -r ~/dots/main/nvidia.conf /etc/modprobe.d/
 echo "
 
 Done!
@@ -166,3 +166,4 @@ if command -v curl >/dev/null 2>&1; then
 else
   sh -c "$(wget -O- https://raw.githubusercontent.com/romkatv/zsh4humans/v5/install)"
 fi
+echo "#(cat ~/.cache/wal/sequences &)  #pywal colors" >> ~/.zshrc
